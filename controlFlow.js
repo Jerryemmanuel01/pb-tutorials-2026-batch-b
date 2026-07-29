@@ -115,6 +115,7 @@ alert("We use this to display outputs, the user input is: "+ userInput)
 -pull
 -branch
 -checkout
+-clone
 
 git init
 git add README.md
