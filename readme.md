@@ -146,3 +146,234 @@ Data type is an attribute of data which tells the compiler or interpreter how th
 //     console.log(count);
 //     count++;
 // } while (count <= maxLimit);
+
+
+// ----------------------Functions in JavaScript-------------------------------
+/*Functions are reusable blocks of code that perform a specific task. They can take inputs (parameters) and return outputs (return values). Functions help organize code and make it more modular.
+
+There are three main ways to define functions in JavaScript:
+1. Function Declaration
+function functionName(parameters) {
+  // code to execute
+  return value; // optional return statement
+}
+2. Function Expression
+const functionName = function(parameters) {
+    // code to execute
+    return value; // optional return statement
+    }
+3. Arrow Function (ES6+)
+const functionName = (parameters) => {
+  // code to execute
+  return value; // optional return statement
+};
+*/
+
+//function declaration example
+// function simpleInterest(principal, rate, time) {
+//     //calculate simple interest
+//     let simpleInterest = (principal * rate * time) / 100;
+//     console.log("The simple interest is: " + simpleInterest);
+//     return simpleInterest; // returning the calculated simple interest
+// }
+
+// simpleInterest(6000,30,20) // calling the function
+// simpleInterest(5000,25,15) // calling the function
+// simpleInterest(7000,35,25) // calling the function
+// simpleInterest(8000,40,30) // calling the function
+
+//function expression example
+// const calculateArea = function(radius) {
+//     const area = Math.PI * radius * radius;
+//     console.log("The area of the circle is: " + area);
+//     return area; // returning the calculated area
+// }
+
+// calculateArea(5) // calling the function
+// calculateArea(10) // calling the function
+// calculateArea(15) // calling the function
+// calculateArea(20) // calling the function
+
+// //ARROW FUNCTION IN JS
+// const calculateCircumference = (radius) => {
+//     const circumference = 2 * Math.PI * radius;
+//     console.log("The circumference of the circle is: " + circumference);
+//     return circumference; // returning the calculated circumference
+// }
+
+// // a callback function is a function that is passed as an argument to another function and is executed after some operation has been completed. It allows you to handle asynchronous operations and execute code after a certain event has occurred.
+// // Example of a callback function
+// function fetchData(callback) {
+//     setTimeout(() => {
+//         const data = "Data fetched from the server";
+//         callback(data); // calling the callback function with the fetched data
+//     }, 2000); // simulating a delay of 2 seconds
+// }
+
+//------------------------------------------------------------------------------------
+// --------------------------------ARRAYS IN JAVASCRIPT-------------------------------
+//------------------------------------------------------------------------------------
+/*Arrays are ordered collections of values that can hold multiple data types. They are used to store and manipulate lists of data. In JavaScript, arrays are created using square brackets [] and can contain any type of data, including other arrays and objects.
+Example of an array:
+let fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
+*/
+
+// let fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
+// console.log("The first fruit is: " + fruits[0]); // accessing the first element
+// //checking the length of the array
+// console.log("The number of fruits in the array is: " + fruits.length); // checking the length of the array
+// fruits[0] = "Mango"; // changing the first element of the array
+
+//methods of arrays in js
+/*
+  Some common array methods include:
+  - push(): Adds one or more elements to the end of an array.
+  - pop(): Removes the last element from an array.
+  - shift(): Removes the first element from an array.
+  - unshift(): Adds one or more elements to the beginning of an array.
+  - splice(): Adds or removes elements from an array at a specified index.
+*/
+
+// example of push() method
+// fruits.push("Fig");
+// console.log("After push, the fruits array is: " + fruits);
+
+// //example of pop() method
+// fruits.pop();
+// console.log("After pop, the fruits array is: " + fruits);
+
+// //example of shift() method
+// fruits.shift();
+// console.log("After shift, the fruits array is: " + fruits);
+
+// //example of unshift() method
+// fruits.unshift("Grapes");
+// console.log("After unshift, the fruits array is: " + fruits);
+
+// //example of splice() method
+// fruits.splice(2, 1, "Kiwi"); // at index 2, remove 1 element and add "Kiwi"
+// console.log("After splice, the fruits array is: " + fruits);
+
+// ---------------------------------------------------------------------------------------
+
+/*
+ iteration of an array; 
+ foreach loop
+    The forEach() method executes a provided function once for each array element.
+*/
+
+// let arrayExample = [
+//   { name: "John", age: 30 },
+//   { name: "Jane", age: 25 },
+//   { name: "Mike", age: 35 },
+//   { name: "Sarah", age: 28 },
+//   { name: "Tom", age: 22 },
+//   { name: "Emily", age: 27 },
+// ];
+
+// arrayExample.forEach((val, i) => {
+//   console.log(val.name + " is " + val.age + " years old.");
+// });
+
+/*
+Transformation
+    The map() method creates a new array populated with the results of calling a provided function on every element in the calling array.
+*/
+// let fruits = ["Apple", "Banana", "Orange"];
+// console.log(fruits);
+
+// const transformedArray = fruits.map((fruit, i) => fruit?.toUpperCase());
+// console.log(transformedArray);
+
+/*
+Filter
+    filter in javascript creates a new array with result of the function called of filtered through
+*/
+
+// let userData = [
+//   { name: "Jonathan", age: 30, isMarried: false },
+//   { name: "Jane", age: 25, isMarried: true },
+//   { name: "Mike", age: 35, isMarried: false },
+//   { name: "Sarah", age: 28, isMarried: true },
+//   { name: "Tom", age: 22, isMarried: false },
+//   { name: "Emily", age: 27, isMarried: true },
+//   { name: "David", age: 32, isMarried: false },
+//   { name: "Sophia", age: 29, isMarried: true },
+//   { name: "James", age: 31, isMarried: false },
+//   { name: "Olivia", age: 26, isMarried: true },
+//   { name: "Jonathan", age: 39, isMarried: true },
+// ];
+
+// let filteredData = userData.filter(
+//   (user) => user.isMarried === true && user.age < 29 && user.name.startsWith("J")
+// );
+
+// console.log(filteredData);
+
+/*
+Searching
+  find- searches through the array and returns the first element that satisfies the provided testing function.
+  some- tests whether at least one element in the array passes the test implemented by the provided function.
+*/
+// let findvalue = userData.find((user) => user.name === "Jonathan");
+// let isValue = userData.some((user) => user.name === "Jonathan");
+
+// console.log(findvalue);
+// console.log(isValue); // returns true if the object is found in the array
+
+// userData.includes({ name: "Jonathan", age: 30, isMarried: false }); // returns true if the object is found in the array
+
+// delete findvalue["age"];
+// findvalue.height = "6ft";
+
+// console.log(findvalue);
+
+// findvalue.name = "Davido";
+
+// console.log(findvalue);
+
+---------------------------------------------------------
+//----------------Object in javascript-------------------
+
+
+/*
+  An object is a collection of properties, and a property is an association between a name (or key) and a value.
+  example:
+  let person = {
+    name: "John",
+    age: 30,
+    city: "New York"
+  };
+
+  Accessing object properties:
+  - Dot notation: person.name
+  - Bracket notation: person["name"]
+
+  Adding or modifying properties:
+  - person.country = "USA"; // Adds a new property
+  - person.age = 31; // Modifies an existing property
+
+  Deleting properties:
+  - delete person.city; // Removes the property
+
+  Looping through object properties:
+  - 
+*/
+// for (let key in findvalue) {
+//   console.log(key + ": " + findvalue[key]);
+// }
+
+// Object.values(findvalue).forEach((val) => console.log(val));
+
+// looping through an array of objects
+// let students = [
+//   { name: "Alice", age: 21 },
+//   { name: "Bob", age: 22 },
+//   { name: "Charlie", age: 23 },
+//   { name: "David", age: 24 },
+//   { name: "Eve", age: 25 },
+// ];
+
+// students.forEach((student) => {
+//   console.log(student.name + " is " + student.age + " years old.");
+// });
