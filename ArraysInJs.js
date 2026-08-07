@@ -6,13 +6,13 @@ Example of an array:
 let fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
 */
 
-let fruits = [
-  "Apple", //0
-  "Banana", //1
-  "Cherry", //2
-  "Date", //3
-  "Elderberry", //4
-];
+// let fruits = [
+//   "Apple", //0
+//   "Banana", //1
+//   "Cherry", //2
+//   "Date", //3
+//   "Elderberry", //4
+// ];
 //-----------------------------------------
 // how to access an array: arrayCollection[]
 
@@ -70,20 +70,18 @@ let arrayExample = [
   { name: "Emily", age: 27 },
 ];
 
-arrayExample.forEach((val, index) => {
-  console.log(
-    val.name + " is " + val.age + " years old.\nAnd the index is " + index,
-  );
-});
+// arrayExample.forEach((val, i) => {
+//   console.log(`the name is ${val.name} and he is ${val.age} years old`);
+// });
 
 /*
 Transformation
     The map() method creates a new array populated with the results of calling a provided function on every element in the calling array.
 */
-// let fruits = ["Apple", "Banana", "Orange"];
+let fruits = ["Apple", "Banana", "Orange"];
 // console.log(fruits);
 
-// const transformedArray = fruits.map((fruit, i) => fruit?.toUpperCase());
+const transformedArray = fruits.map((fruit, i) => fruit?.toUpperCase());
 // console.log(transformedArray);
 
 /*
@@ -91,23 +89,23 @@ Filter
     filter in javascript creates a new array with result of the function called of filtered through
 */
 
-// let userData = [
-//   { name: "Jonathan", age: 30, isMarried: false },
-//   { name: "Jane", age: 25, isMarried: true },
-//   { name: "Mike", age: 35, isMarried: false },
-//   { name: "Sarah", age: 28, isMarried: true },
-//   { name: "Tom", age: 22, isMarried: false },
-//   { name: "Emily", age: 27, isMarried: true },
-//   { name: "David", age: 32, isMarried: false },
-//   { name: "Sophia", age: 29, isMarried: true },
-//   { name: "James", age: 31, isMarried: false },
-//   { name: "Olivia", age: 26, isMarried: true },
-//   { name: "Jonathan", age: 39, isMarried: true },
-// ];
+let userData = [
+  { name: "Jonathan", age: 30, isMarried: false },
+  { name: "Jane", age: 25, isMarried: true },
+  { name: "Mike", age: 35, isMarried: false },
+  { name: "Sarah", age: 28, isMarried: true },
+  { name: "Tom", age: 22, isMarried: false },
+  { name: "Emily", age: 27, isMarried: true },
+  { name: "David", age: 32, isMarried: false },
+  { name: "Sophia", age: 29, isMarried: true },
+  { name: "James", age: 31, isMarried: false },
+  { name: "Olivia", age: 26, isMarried: true },
+  { name: "Jonathan", age: 39, isMarried: true },
+];
 
-// let filteredData = userData.filter(
-//   (user) => user.isMarried === true && user.age < 29 && user.name.startsWith("J")
-// );
+let filteredData = userData.filter(
+  (user) => user.isMarried === true || user.age > 30,
+);
 
 // console.log(filteredData);
 
@@ -116,19 +114,22 @@ Searching
   find- searches through the array and returns the first element that satisfies the provided testing function.
   some- tests whether at least one element in the array passes the test implemented by the provided function.
 */
-// let findvalue = userData.find((user) => user.name === "Jonathan");
-// let isValue = userData.some((user) => user.name === "Jonathan");
+let findvalue = userData.find((user) => user.name === "James");
+// let isValue = userData.some((user) => user.name === "hanks");
 
 // console.log(findvalue);
 // console.log(isValue); // returns true if the object is found in the array
+// console.log(fruits.includes("Orange"));
 
-// userData.includes({ name: "Jonathan", age: 30, isMarried: false }); // returns true if the object is found in the array
+ // returns true if the object is found in the array
 
-// delete findvalue["age"];
-// findvalue.height = "6ft";
+delete findvalue["age"];
+console.log(findvalue);
 
-// console.log(findvalue);
+findvalue.height = "6ft";
 
-// findvalue.name = "Davido";
+console.log(findvalue);
 
-// console.log(findvalue);
+findvalue.name = "Davido";
+
+console.log(findvalue);
