@@ -93,6 +93,8 @@ alert("We use this to display outputs, the user input is: "+ userInput)
 // for (let i = 0; i <= 100; i++) {
 //   console.log(i);
 // }
+
+
 // let count = 0;
 // while (count < 50) {
 //   console.log(count);
