@@ -379,7 +379,7 @@ Searching
 // });
 
 // -------------------------------------------------------------------------
-// ------------------------------DOM MANIPULATION IN JAVASCRIPT------------------------------
+// ------------------------------DOM MANIPULATION IN JAVASCRIPT-------------
 // -------------------------------------------------------------------------
 /*
 DOM (Document Object Model) manipulation in JavaScript refers to the process of using JavaScript to interact with and modify the structure, style, and content of a web page. The DOM represents the HTML document as a tree structure, where each element is a node that can be accessed and manipulated using JavaScript.
@@ -425,3 +425,58 @@ firstSelector.forEach((element) => {
   element.style.textDecoration = "underline";
   element.style.textDecorationColor = "blue";
 });
+
+
+//CHANGING CONTENT AND ATTRIBUTES OF AN ELEMENT
+/*
+  - textContent: Changes the text content of an element.
+  - innerHTML: Changes the HTML content of an element.
+  - setAttribute(): Changes the value of an attribute of an element.
+  - style: Changes the CSS styles of an element.
+*/
+emptydiv.textContent = "This text was added using JavaScript!"; // changing the text content of the div element
+emptydiv.style.color = "blue"; // changing the text color of the div element
+emptydiv.style.fontSize = "20px";
+
+emptydiv.innerHTML = "<strong>This text is now bold!</strong>"; // changing the HTML content of the div element
+
+// emptyTag[1].setAttribute("src", "https://www.w3schools.com/images/w3schools_green.jpg"); // changing the src attribute of the second image element
+// emptyTag[1].setAttribute("alt", "W3Schools Logo"); // changing the alt attribute of the second image element
+// emptyTag[1].style.width = "500px"; // changing the width of the second image element
+
+//--------------------CREATING AND REMOVING ELEMENTS IN JAVASCRIPT----------------------
+/*
+  - createElement(): Creates a new element.
+  - appendChild(): Adds a new child element to a parent element.
+  - removeChild(): Removes a child element from a parent element.
+  - insertBefore(): Inserts a new element before a specified existing element.
+  - replaceChild(): Replaces an existing child element with a new element.
+*/
+
+const addedDiv = document.createElement("div"); // creating a new div element
+addedDiv.textContent = "This is a new div element added using JavaScript!"; // setting the text content of the new div element
+addedDiv.style.color = "green";
+addedDiv.style.fontSize = "18px";
+addedDiv.style.borderRadius = "10px";
+addedDiv.style.border = "2px solid green";
+addedDiv.style.padding = "10px";
+addedDiv.style.backgroundColor = "#00eeff";
+document.body.appendChild(addedDiv); // adding the new div element to the body of the document
+
+const newParagraph = document.createElement("p"); // creating a new paragraph element
+newParagraph.textContent = "This is a new paragraph added using JavaScript!";
+newParagraph.style.color = "purple";
+newParagraph.style.fontSize = "16px";
+newParagraph.style.fontStyle = "italic";
+newParagraph.style.textDecoration = "underline";
+newParagraph.style.textDecorationColor = "purple";
+addedDiv.appendChild(newParagraph); // adding the new paragraph element as a child of the new div element
+
+// document.body.removeChild(emptyParagraph[0]);
+const anotherParagraph = document.createElement("p");
+anotherParagraph.textContent =
+  "This is another new paragraph added using JavaScript!";
+anotherParagraph.style.color = "red";
+anotherParagraph.style.fontSize = "14px";
+// addedDiv.insertBefore(anotherParagraph, newParagraph); // inserting the new paragraph before the existing new paragraph in the div element
+addedDiv.replaceChild(anotherParagraph, newParagraph); // inserting the new paragraph before the existing new paragraph in the div element
