@@ -480,3 +480,200 @@ anotherParagraph.style.color = "red";
 anotherParagraph.style.fontSize = "14px";
 // addedDiv.insertBefore(anotherParagraph, newParagraph); // inserting the new paragraph before the existing new paragraph in the div element
 addedDiv.replaceChild(anotherParagraph, newParagraph); // inserting the new paragraph before the existing new paragraph in the div element
+
+
+1. What is the DOM?
+
+DOM (Document Object Model):
+A tree-like structure representing the HTML document.
+Every HTML element (like <p>, <div>, <button>) becomes a node that JavaScript can access, read, and manipulate.
+
+Example tree:
+
+Document
+ └── html
+      ├── head
+      └── body
+           ├── h1
+           ├── p
+           └── button
+
+
+Think of the DOM as the bridge between HTML (structure) and JavaScript (behavior).
+
+2. Selecting Elements
+
+You need to find elements before you can do anything with them.
+
+By ID:
+
+const heading = document.getElementById("main-title");
+
+
+By Class:
+
+const items = document.getElementsByClassName("list-item");
+
+
+By Tag:
+
+const paragraphs = document.getElementsByTagName("p");
+
+
+Modern & Flexible (Query Selectors):
+
+const firstItem = document.querySelector(".list-item");
+const allItems = document.querySelectorAll(".list-item");
+
+3. Changing Content & Attributes
+
+Change text:
+
+heading.textContent = "Welcome to DOM!";
+
+
+Change HTML inside:
+
+heading.innerHTML = "<em>Welcome to DOM!</em>";
+
+
+Change attributes:
+
+const link = document.querySelector("a");
+link.setAttribute("href", "https://example.com");
+
+4. Styling with JS
+
+Inline style:
+
+heading.style.color = "blue";
+heading.style.fontSize = "2rem";
+
+
+Toggle CSS class:
+
+heading.classList.add("highlight");
+heading.classList.remove("highlight");
+heading.classList.toggle("hidden");
+
+5. Creating & Removing Elements
+
+Create new element:
+
+const newDiv = document.createElement("div");
+newDiv.textContent = "I was created with JS!";
+document.body.appendChild(newDiv);
+
+
+Remove element:
+
+newDiv.remove();
+
+6. Events in JavaScript
+
+Events make the page interactive.
+Examples: click, mouseover, keydown, submit.
+
+Basic example:
+
+const button = document.querySelector("button");
+
+button.addEventListener("click", () => {
+  alert("Button was clicked!");
+});
+
+
+Other event types:
+
+// Mouse
+element.addEventListener("mouseover", () => console.log("Hovered!"));
+
+// Keyboard
+document.addEventListener("keydown", (e) => console.log(e.key));
+
+// Form
+form.addEventListener("submit", (e) => {
+  e.preventDefault(); // stop page reload
+  console.log("Form submitted!");
+});
+
+7. Event Object
+
+Every event gives you an event object with details:
+
+button.addEventListener("click", (event) => {
+  console.log(event.type); // "click"
+  console.log(event.target); // the button itself
+});
+
+
+
+//---------------------------------------------------------------------------------------------------------
+
+// ---------------------form event----------------------
+
+const formElement = document.getElementById("form-event");
+
+formElement.addEventListener("submit", (event) => {
+  event.preventDefault(); // Prevents the default form submission behavior
+
+  const nameInput = document.getElementById("name");
+  const emailInput = document.getElementById("email");
+  const passwordInput = document.getElementById("password");
+  const errorMsg = document.getElementById("error-text");
+  const regexPasswordValidator =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+
+  const name = nameInput.value.trim();
+  const email = emailInput.value.trim();
+  const password = passwordInput.value.trim();
+
+  if (!name || !email || !password) {
+    errorMsg.textContent = "Please fill in all input";
+    return;
+  }
+
+  if (!regexPasswordValidator.test(password)) {
+    errorMsg.textContent =
+      "Password must be at least 8 characters long, include an uppercase letter, a number, and a special character";
+    return;
+  }
+
+  const formMessage = document.createElement("p");
+  formMessage.textContent = `Form submitted! Name: ${name}, Email: ${email}`;
+  formMessage.style.backgroundColor = "#28a745";
+  formMessage.style.color = "white";
+  formMessage.style.padding = "10px";
+  formMessage.style.borderRadius = "10px";
+  formMessage.style.marginTop = "20px";
+
+  // const formMessageContainer = document.getElementById("form-message");
+
+  formElement.appendChild(formMessage);
+
+  // Clear the form inputs
+  nameInput.value = "";
+  emailInput.value = "";
+  passwordInput.value = "";
+});
+
+//form events to listen for
+/*
+- submit
+- focus & blur
+- change 
+*/
+const passwordInput = document.getElementById("password");
+const showPasswordBtn = document.getElementById("show-password");
+let isShowPassword = false;
+
+showPasswordBtn.addEventListener("click", () => {
+  isShowPassword = !isShowPassword;
+  if (isShowPassword) {
+    passwordInput.setAttribute("type", "text");
+    formElement.classList.add("form-event");
+  } else {
+    passwordInput.setAttribute("type", "password");
+  }
+});
+

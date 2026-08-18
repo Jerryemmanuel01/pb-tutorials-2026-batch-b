@@ -17,6 +17,10 @@ const fristParagraph = document.getElementById("firstParagraph");
 
 console.log(fristParagraph);
 fristParagraph.textContent = "I have made some changes to this paragraph";
+fristParagraph.setAttribute("title", "This is a tooltip")
+
+fristParagraph.classList.add("testingClasslist");
+fristParagraph.classList.remove("testingClasslist");
 // fristParagraph.style.fontSize = '12px'
 
 // getiing element by ClassName
@@ -80,7 +84,12 @@ let emptyTag = document.getElementsByTagName("img");
 emptyTag[0].src = "https://www.w3schools.com/images/w3schools_green.jpg";
 emptyTag[0].alt = "W3Schools Logo";
 emptyTag[0].style.width = "200px";
-emptyTag[0].style.height = "auto";
+emptyTag[0].style.height = "300px";
+
+// emptyTag[0].setAttribute("height", "400px")
+console.log(emptyTag[0]);
+
+
 
 // // emptyTag[1].src = "https://www.w3schools.com/images/w3schools_green.jpg";
 // // emptyTag[1].alt = "W3Schools Logo";
@@ -142,3 +151,4 @@ addedDiv.replaceChild(anotherParagraph, newParagraph); // inserting the new para
 /*
 
 */
+
