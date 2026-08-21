@@ -61,3 +61,7 @@ input.addEventListener("input", (event) => {
 //   alert("You scrolled the page!");
 //   console.log("You scrolled the page!");
 // });
+
+const alertEvent = () =>{
+  alert("Showing this because you clicked a button")
+}

@@ -677,3 +677,84 @@ showPasswordBtn.addEventListener("click", () => {
   }
 });
 
+//---------------------------------------------------------------------------------------------
+//-------------------------------INTRODUCTION TO LOCAL STORAGE---------------------------------
+//---------------------------------------------------------------------------------------------
+
+//Local storage is a browser storage medium
+//Local storage terminologies
+/*
+setItem() - setItem is used to set items into the local storage 
+getItem() - getItem is used to get or retrieve stored items in the local storage
+removeItem() - removeItem is used to remove a specific item from the local storage by providing the key of the item to be removed
+clear() - clear is used to remove all items from the local storage
+*/
+
+let inputArray = localStorage.getItem("inputArray")
+  ? JSON.parse(localStorage.getItem("inputArray"))
+  : [];
+
+const formField = document.getElementById("form-field");
+const inputField = document.getElementById("input-field");
+const inputButton = document.getElementById("input-button");
+const deleteButton = document.getElementById("delete-button");
+const removeLastButton = document.getElementById("remove-last-button");
+
+formField.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const inputValue = inputField.value.trim();
+
+  if (inputValue) {
+    const newInputArray = [...inputArray, inputValue];
+    localStorage.setItem("inputArray", JSON.stringify(newInputArray));
+    inputArray = newInputArray;
+    alert("Input saved to local storage!");
+    inputField.value = "";
+  } else {
+    alert("Please enter a value before submitting.");
+  }
+  // if (inputValue) {
+  //   // localStorage.setItem("userInput", inputValue);
+  //   const newInputArray = [...inputArray, inputValue];
+  //   console.log(newInputArray);
+  //   inputArray = newInputArray;
+  //   // alert("Input saved to local storage!");
+  //   inputField.value = "";
+  // } else {
+  //   alert("Please enter a value before submitting.");
+  // }
+});
+
+deleteButton.addEventListener("click", () => {
+  localStorage.removeItem("inputArray");
+  inputArray = [];
+  alert("Local storage cleared!");
+});
+
+removeLastButton.addEventListener("click", () => {
+  if (inputArray.length > 0) {
+    inputArray.pop();
+    localStorage.setItem("inputArray", JSON.stringify(inputArray));
+    alert("Last input removed from local storage!");
+  } else {
+    alert("No inputs to remove!");
+  }
+});
+
+console.log(inputArray);
+
+const data = function name(params) {};
+
+console.log(Date.now());
+const postalInput = document.getElementById("postal-code");
+
+fetch(`https://api.example.com/register?p=${postalInput.value}&key=92930923092u9ur`, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    email: "test@example.com",
+    password: "Password@123",
+  }),
+});

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task App</title>
+  </head>
+  <body>
+    <form id="taskform">
+      <input
+        type="text"
+        name="task"
+        id="task"
+        placeholder="Please enter your task"
+      />
+      <input type="submit" value="Submit" id="submitBtn" />
+    </form>
+
+    <div id="taskDiv"></div>
+
+    <button onclick="clearLocalStorageItems()">Clear Local storage</button>
+
+
+    <script src="localStorage.js"></script>
+  </body>
+</html>

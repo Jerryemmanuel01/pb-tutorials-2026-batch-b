@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
     <h1 style="border-bottom: 2px solid green; color: green">
@@ -23,19 +23,55 @@
 
     <div id="js-event"></div>
 
-    <input type="text" id="search" name="search" placeholder="Type fruits" value="testing">
-
+    <input
+      type="text"
+      id="search"
+      name="search"
+      placeholder="Type fruits"
+      value="testing"
+    />
 
     <button id="myButton" type="button">Click me</button>
 
+    <button onclick="alertEvent()">Click to see an alert</button>
 
+    <form id="form-event">
+      <p>LOGIN FORM</p>
+      <label for="fullname">Fullname</label><br />
+      <input
+        type="text"
+        name="fullname"
+        id="fullname"
+        placeholder="Please enter your fullname"
+      /><br/> <br />
+      <label for="email">Email</label><br />
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Please enter your email"
+      /><br/> <br />
+      <label for="Phone">Phone</label><br />
+      <input
+        type="number"
+        name="Phone"
+        id="phone"
+        placeholder="Please enter your Phone Number"
+      /><br/> <br />
+      <label for="password">password</label><br />
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Please enter your password Number"
+      /><br/> <br />
 
+      <input type="submit" value="Submit">
 
-
-
-
-
-    
+      <button type="button" onclick="
+      togglePassword()">show</button>
+      
+    </form>
 
     <!-- <script src="./index.js"></script> -->
     <!-- <script src="./operator.js"></script> -->
@@ -46,6 +82,8 @@
     <!-- <script src="./ObjectsInJs.js"></script> -->
     <!-- <script src="./Array&Objects.js"></script> -->
     <!-- <script src="./DOM.js"></script> -->
-    <script src="./Event.js"></script>
+    <!-- <script src="./Event.js"></script> -->
+    <!-- <script src="./Forms.js"></script> -->
+    <script src="./localStorage.js"></script>
   </body>
 </html>
